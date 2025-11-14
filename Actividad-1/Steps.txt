@@ -7,9 +7,13 @@ EXAMPLE
 	-PC -> 192.168.3.10
 	-Printer -> 192.168.3.11
 	-Server -> 192.168.3.12
-4.-LAN House
+4.-Configurar DNS server de empresa (Name:www.empresa.com IP:192.168.3.12)
+5.-Poner el todos los dispositivos como ruta de DNS la IP del servidor
+6.-LAN House
 	-Red -> 192.168.0.0/24
 	-Server -> DHCPv4 192.168.102
 	-Laptops -> DHCPv4
 	-Printer -> DHCPv4
-5.-Abrir el GUI del Home Router y configurar la IP del servidor como IP estatica (192.168.0.102)
+7.-Abrir el GUI del Home Router y configurar la IP del servidor como IP estatica (192.168.0.102)
+8.-Configurar DNS server de home (Name:www.casa.com IP:192.168.0.102)
+9.-En el GUI del home router, redireccionar todos los paquetes de DNS a la IP del servidor
