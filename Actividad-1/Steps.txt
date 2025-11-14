@@ -1,0 +1,11 @@
+EXAMPLE
+1.-Colocamos los dispositivos que vamos a usar
+2.-Separar por zonas (LAN Home, LAN Empresa, ISP)
+3.-LAN Empresa
+	-Red -> 192.168.3.0/24
+	-Router -> 192.168.3.1
+	-PC -> 192.168.3.10
+	-Printer -> 192.168.3.11
+	-Server -> 192.168.3.12
+4.-LAN House
+	-Red -> 192.168.0.0/24
