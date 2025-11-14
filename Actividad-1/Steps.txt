@@ -9,3 +9,7 @@ EXAMPLE
 	-Server -> 192.168.3.12
 4.-LAN House
 	-Red -> 192.168.0.0/24
+	-Server -> DHCPv4 192.168.102
+	-Laptops -> DHCPv4
+	-Printer -> DHCPv4
+5.-Abrir el GUI del Home Router y configurar la IP del servidor como IP estatica (192.168.0.102)
