@@ -17,3 +17,5 @@ EXAMPLE
 7.-Abrir el GUI del Home Router y configurar la IP del servidor como IP estatica (192.168.0.102)
 8.-Configurar DNS server de home (Name:www.casa.com IP:192.168.0.102)
 9.-En el GUI del home router, redireccionar todos los paquetes de DNS a la IP del servidor
+
+ACTIVIDAD
