@@ -33,23 +33,28 @@
 		· Gig 0/1 --> 20.0.0.1/8
 	- Router Home:
 		· Internet --> 50.0.0.2/8
-12.-Añadir un servidor en el ISP con IP red 50.0.0.0/8
+12.-Configurar Internet Connection Type en el Home Router:
+	- Internet IP Address: 50.0.0.2
+	- Subnet Mask: 255.0.0.0
+	- Default Gateway: 50.0.0.1
+	- DNS 1: 192.168.0.102
+13.-Añadir un servidor en el ISP con IP red 50.0.0.0/8
 	- IP: 50.0.0.3/8
 	- Subnet Mask: 255.0.0.0
 	- Gateway: 50.0.0.1
 	- DNS: 50.0.0.3
-13.-Añadir un servidor en el ISP con IP red 30.0.0.0/8
+14.-Añadir un servidor en el ISP con IP red 30.0.0.0/8
 	- IP: 30.0.0.2/8
 	- Subnet Mask: 255.0.0.0
 	- Gateway: 30.0.0.1
 	- DNS: 30.0.0.2
-14.-Actualizar todos los DNS de los servidores DNS con la siguiente lista:
+15.-Actualizar todos los DNS de los servidores DNS con la siguiente lista:
 	- www.empresa.com / 192.168.0.12
 	- www.casa.com / 50.0.0.2
 	- www.isp.com / 50.0.0.3
 	- www.isp2.com / 30.0.0.2
-15.-Para poder comunicar entre redes IP (Empresa, Casa, y ISP y sus subredes) debemos actualizar las tablas RIP (Routing Information Protocol)
-16.-Dispositivo --> Config --> RIP --> Add
+16.-Para poder comunicar entre redes IP (Empresa, Casa, y ISP y sus subredes) debemos actualizar las tablas RIP (Routing Information Protocol)
+17.-Dispositivo --> Config --> RIP --> Add
 	- Router 1:
 		· 20.0.0.0
 		· 30.0.0.0
