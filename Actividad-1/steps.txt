@@ -1,21 +1,62 @@
-EXAMPLE
 1.-Colocamos los dispositivos que vamos a usar
 2.-Separar por zonas (LAN Home, LAN Empresa, ISP)
 3.-LAN Empresa
-	-Red -> 192.168.3.0/24
-	-Router -> 192.168.3.1
-	-PC -> 192.168.3.10
-	-Printer -> 192.168.3.11
-	-Server -> 192.168.3.12
+	- Red -> 192.168.3.0/24
+	- Router -> 192.168.3.1
+	- PC -> 192.168.3.10
+	- Printer -> 192.168.3.11
+	- Server -> 192.168.3.12
 4.-Configurar DNS server de empresa (Name:www.empresa.com IP:192.168.3.12)
-5.-Poner el todos los dispositivos como ruta de DNS la IP del servidor
+5.-Poner en todos los dispositivos como ruta de DNS la IP del servidor
 6.-LAN House
-	-Red -> 192.168.0.0/24
-	-Server -> DHCPv4 192.168.102
-	-Laptops -> DHCPv4
-	-Printer -> DHCPv4
+	- Red -> 192.168.0.0/24
+	- Server -> DHCPv4 192.168.102
+	- Laptops -> DHCPv4
+	- Printer -> DHCPv4
 7.-Abrir el GUI del Home Router y configurar la IP del servidor como IP estatica (192.168.0.102)
 8.-Configurar DNS server de home (Name:www.casa.com IP:192.168.0.102)
-9.-En el GUI del home router, redireccionar todos los paquetes de DNS a la IP del servidor
-
-ACTIVIDAD
+9.-En el GUI del home router, redireccionar todos los paquetes de DNS a la IP del servidor (192.168.0.102) haciendo uso del puerto 80 en el router y en el servidor
+10.-ISP
+	- 20.0.0.0/8 (2 routers)
+	- 30.0.0.0/8 (1 router - 1 servidor)
+	- 40.0.0.0/8 (2 routers)
+	- 50.0.0.0/8 (1 router - 1 home router - 1 servidor - 1 switch)
+11.-Confifurar routers de los ISP
+	- Router 1:
+		· Gig 0/0 --> 20.0.0.2/8
+		· Gig 0/1 --> 40.0.0.1/8
+		· Gig 0/2 --> 30.0.0.1/8
+	- Router 2:
+		· Gig 0/0 --> 40.0.0.2/8
+		· Gig 0/1 --> 50.0.0.1/8
+	- Router Empresa:
+		· Gig 0/1 --> 20.0.0.1/8
+	- Router Home:
+		· Internet --> 50.0.0.2/8
+12.-Añadir un servidor en el ISP con IP red 50.0.0.0/8
+	- IP: 50.0.0.3/8
+	- Subnet Mask: 255.0.0.0
+	- Gateway: 50.0.0.1
+	- DNS: 50.0.0.3
+13.-Añadir un servidor en el ISP con IP red 30.0.0.0/8
+	- IP: 30.0.0.2/8
+	- Subnet Mask: 255.0.0.0
+	- Gateway: 30.0.0.1
+	- DNS: 30.0.0.2
+14.-Actualizar todos los DNS de los servidores DNS con la siguiente lista:
+	- www.empresa.com / 192.168.0.12
+	- www.casa.com / 50.0.0.2
+	- www.isp.com / 50.0.0.3
+	- www.isp2.com / 30.0.0.2
+15.-Para poder comunicar entre redes IP (Empresa, Casa, y ISP y sus subredes) debemos actualizar las tablas RIP (Routing Information Protocol)
+16.-Dispositivo --> Config --> RIP --> Add
+	- Router 1:
+		· 20.0.0.0
+		· 30.0.0.0
+		· 40.0.0.0
+	- Router 2:
+		· 40.0.0.0
+		· 50.0.0.0
+	- Router Empresa:
+		· 192.168.0.0
+		· 20.0.0.0
